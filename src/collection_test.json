@@ -1,0 +1,93 @@
+{
+    "collection": {
+        "title": "Playstation 2 Games 2",
+        "createdAt": 1665688860011,
+        "media": [
+            "https://images-na.ssl-images-amazon.com/images/I/91iHBLGTsIL._SL1500_.jpg"
+        ],
+        "updatedAt": 1666275035543,
+        "handle": "ps2-games",
+        "search": [
+            "ps2-games",
+            "playstation 2 games 2",
+            "playstation",
+            "2",
+            "games",
+            "2"
+        ],
+        "desc": "Selection of Playstation 2 Games 3"
+    },
+    "products": [
+        {
+            "title": "call of duty 1",
+            "handle": "call-of-duty-615788",
+            "price": 11,
+            "tags": [
+                "genre_adventure"
+            ],
+            "desc" : "Call Of duty bitches",
+            "video" : "https://www.youtube.com/watch?v=BnHinnR_o8E",
+            "qty" : 1,
+            "media": [
+                "https://images-na.ssl-images-amazon.com/images/I/91iHBLGTsIL._SL1500_.jpg",
+                "https://images-na.ssl-images-amazon.com/images/I/91iHBLGTsIL._SL1500_.jpg",
+                "https://images-na.ssl-images-amazon.com/images/I/91iHBLGTsIL._SL1500_.jpg"
+            ],
+            "updatedAt": 1666121877312
+        },
+        {
+            "title": "call of duty 2",
+            "handle": "call-of-duty-615788",
+            "price": 22,
+            "desc" : "Call Of duty bitches",
+            "qty" : 1,
+            "tags": [
+                "genre_action"
+            ],
+            "media": [
+                "https://images-na.ssl-images-amazon.com/images/I/91iHBLGTsIL._SL1500_.jpg"  
+            ],
+            "updatedAt": 1666121877312
+        },
+        {
+            "title": "call of duty 3",
+            "handle": "call-of-duty-615788",
+            "price": 33,
+            "desc" : "Call Of duty bitches",
+            "qty" : 1,
+            "tags": [
+                "genre_action"
+            ],
+            "media": [
+                "https://images-na.ssl-images-amazon.com/images/I/91iHBLGTsIL._SL1500_.jpg"  
+            ],
+            "updatedAt": 1666121877312
+        },
+        {
+            "title": "call of duty 4",
+            "handle": "call-of-duty-615788",
+            "price": 44,
+            "tags": [
+                "genre_action"
+            ],
+            "media": [
+                "https://images-na.ssl-images-amazon.com/images/I/91iHBLGTsIL._SL1500_.jpg"  
+            ],
+            "updatedAt": 1666121877312
+        },
+        {
+            "title": "call of duty 5",
+            "handle": "call-of-duty-615788",
+            "price": 55,
+            "tags": [
+                "genre_action",
+                "genre_adventure",
+                "genre_sport"
+            ],
+            "media": [
+                "https://images-na.ssl-images-amazon.com/images/I/91iHBLGTsIL._SL1500_.jpg"  
+            ],
+            "updatedAt": 1666121877312
+        }
+    ]
+}
