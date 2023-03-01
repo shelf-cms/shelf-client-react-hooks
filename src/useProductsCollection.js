@@ -119,10 +119,10 @@ export const sort = (data, strategy) => {
       sort_fn = (a, b) => b.title.localeCompare(a.title)
       break;
     case 5: // new to old
-      sort_fn = (a, b) =>  -new Date(b.createdAt) + new Date(a.createdAt);
+      sort_fn = (a, b) =>  -b.updatedAt + a.updatedAt
       break;
     case 6: // old to new
-      sort_fn = (a, b) =>  new Date(b.createdAt) - new Date(a.createdAt);
+      sort_fn = (a, b) =>  b.updatedAt - a.updatedAt
       break;
     default:
       break;
@@ -173,7 +173,7 @@ const useProductsCollection = (handle=undefined, default_sort=0) => {
     async function fetchData() {
       setIsLoading(true)
       try {
-        const validHandle = false //handle!=='debug'
+        const validHandle = handle!=='debug'
         // console.log('handle ', handle);
         // console.log('validHandle ', validHandle);
         const json = validHandle ?
@@ -222,7 +222,7 @@ const useProductsCollection = (handle=undefined, default_sort=0) => {
 
   const products_filtered_sorted = useMemo(
     () => {
-      console.log('filters ', filters)
+      // console.log('filters ', filters)
       let running = all.current?.products ?? []
       if(filters) 
         running = filter(running, filters)
