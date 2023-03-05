@@ -1,7 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 import { getShelf } from 'shelf-cms-sdk'
 import test_coll from './collection_test.json'
 
+/**
+ * 
+ * @param {string} handle 
+ * @returns {[product: ProductData, error: any, loading: boolean]}
+ */
 const useProduct = ( handle=0 ) => {
   const [error, setError] = useState(undefined)
   const [loading, setIsLoading] = useState(true)
@@ -22,7 +27,7 @@ const useProduct = ( handle=0 ) => {
       }
     }
     fetchData()
-  }, [getShelf(), handle])
+  }, [handle])
 
   return [
     product, error, loading

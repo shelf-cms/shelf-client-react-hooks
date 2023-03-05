@@ -7,7 +7,7 @@ const useUser = () => {
 
   useEffect(() => {
     return getShelf().auth.add_sub(setUser)
-  }, [getShelf])
+  }, [])
   
   return [user[0], user[1], { 
                   signin : getShelf().auth.signin_with_email_pass, 

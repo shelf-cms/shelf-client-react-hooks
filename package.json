@@ -23,7 +23,7 @@
   },
   "type": "module",
   "module": "es6",
-  "main" : "./src/index.js",
+  "main" : "./index.js",
   "author": "",
   "license": "ISC",
   "repository": {

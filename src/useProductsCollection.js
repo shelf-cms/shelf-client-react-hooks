@@ -1,30 +1,8 @@
 import { useCallback, useEffect, 
          useMemo, useRef, 
-         useState } from "react";
+         useState } from 'react'
 import { getShelf } from 'shelf-cms-sdk'
 import test_coll from './collection_test.json'
-
-const q = {
-  orderBy: [['firstname', 'asc']],
-  limit: -1,
-}
-
-/** 
- * @typedef {object} ProductData
- * @property {string[]} collections
- * @property {string} video
- * @property {number} price
- * @property {string} handle a unique readable identifier
- * @property {string[]} search
- * @property {string[]} tags
- * @property {string} desc
- * @property {string[]} media
- * @property {number} updatedAt
- * @property {number} qty
- * @property {string} title
- * @property {number} createdAt
- * @property {number} compareAtPrice
- */
 
 /**
  * @typedef {Object} FilterData
@@ -92,12 +70,26 @@ function get_data() {
 }
 
 /**
+ * @enum {number} 
+ */
+export const SortOrderEnum = {
+  PRICE_HIGH: 0,
+  PRICE_LOW: 1,
+  POPULAR_HIGH: 2,
+  A_Z: 3,
+  Z_A: 4,
+  NEW_TO_OLD: 5,
+  OLD_TO_NEW: 6,
+}
+
+/**
  * 
  * @param {ProductData[]} data 
- * @param {number} strategy 
+ * @param {SortOrderEnum} strategy 
  * @returns 
  */
 export const sort = (data, strategy) => {
+
   let sort_fn = (a, b) => true
   // users.sort((a, b) => a.firstname.localeCompare(b.firstname))
   // console.log(strategy);
@@ -162,8 +154,21 @@ export const filter = (data, filter_map) => {
   return filtered
 }
 
+/**
+ * 
+ * @param {string} handle 
+ * @param {SortOrderEnum} default_sort 
+ * @returns {[ CollectionData, ProductData[], boolean, any, {
+ *    sortOrder: SortOrderEnum,
+ *    filter: [string, FilterData[]],
+ *    onFilterChange, onSortChange
+ *  }
+ * ]}
+ */
 const useProductsCollection = (handle=undefined, default_sort=0) => {
+  /**@type {[string, FilterData[]][]} */
   const [filters, setFilters] = useState(undefined)
+  /**@type {SortOrder}  */
   const [sortOrder, setSortOrder] = useState(default_sort)
   const [error, setError] = useState(undefined)
   const [loading, setIsLoading] = useState(true)
@@ -183,10 +188,7 @@ const useProductsCollection = (handle=undefined, default_sort=0) => {
         // console.log(json);
 
         // const json = test_coll
-        all.current = {
-          products : json.products,
-          collection : json.collection, 
-        }
+        all.current = json
         setFilters(inferFilters(json.products))
       } catch (err) {
         setError(err)
@@ -197,7 +199,14 @@ const useProductsCollection = (handle=undefined, default_sort=0) => {
     fetchData()
   }, [getShelf(), handle])
 
+  /**
+   * notify new filter settings
+   */
   const onFilterChange = useCallback(
+    /**
+     * @param {string|number} id 
+     * @param {boolean} state 
+     */
     (id, state) => {
       setFilters(c => {
         c.forEach(([k, vs]) => {
@@ -214,15 +223,19 @@ const useProductsCollection = (handle=undefined, default_sort=0) => {
   )
 
   const onSortChanged = useCallback(
+    /**
+     * Notify new sort startegy
+     * @param {SortOrderEnum} idx 
+     */
     (idx) => {
       setSortOrder(idx)
-    }
-    , []
+    }, []
   )
 
   const products_filtered_sorted = useMemo(
     () => {
       // console.log('filters ', filters)
+      /**@type {ProductData[]} */
       let running = all.current?.products ?? []
       if(filters) 
         running = filter(running, filters)
@@ -233,7 +246,7 @@ const useProductsCollection = (handle=undefined, default_sort=0) => {
   ) 
 
   return [ 
-    all.current.collection, 
+    all.current, 
     products_filtered_sorted, 
     loading, error, 
     { 
