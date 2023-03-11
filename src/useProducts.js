@@ -29,7 +29,7 @@ const type = {}
 const useProducts = (search=undefined, limit=10) => {
   const [q, setQ] = useState({ search, limit })
   const q_initial = useRef({
-    orderBy: [['updatedAt', 'asc']],
+    orderBy: [['updatedAt', 'desc']],
     limit: q.limit
   })
 
