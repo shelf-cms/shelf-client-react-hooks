@@ -1,11 +1,14 @@
-import  { getShelf } from 'shelf-cms-sdk'
-import { useCallback, useEffect, useState } from "react"
+import { getShelf } from 'shelf-client-sdk'
+import { useCallback, useEffect, useState } from 'react'
+import { ProductData, LineItem } from 'shelf-client-sdk/src/js-docs-types'
 
 const useCart = () => {
   const [cart, setCart] = useState(getShelf().cart.get())
+  const [ready, setReady] = useState(false)
 
   useEffect(
     () => {
+      setReady(true)
       return getShelf().cart.add_sub(setCart)
     }, []
   )
@@ -67,7 +70,7 @@ const useCart = () => {
   }
 
   return {
-    cart, controller
+    ready, cart, controller
   }
 }
 
