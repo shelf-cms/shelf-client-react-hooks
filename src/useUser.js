@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { getShelf } from 'shelf-client-sdk'
-import { UserData } from 'shelf-client-sdk/src/js-docs-types' 
+import { getShelf } from 'shelf-client-js-sdk'
+import { UserData } from 'shelf-client-js-sdk/src/js-docs-types' 
 
 const useUser = () => {
   

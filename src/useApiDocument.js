@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getShelf } from 'shelf-cms-sdk'
+import { getShelf } from 'shelf-client-js-sdk'
 import test_coll from './collection_test.json'
 
 /**

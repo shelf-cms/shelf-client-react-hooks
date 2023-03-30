@@ -1,4 +1,4 @@
-import  { getShelf } from 'shelf-cms-sdk'
+import  { getShelf } from 'shelf-client-js-sdk'
 
 import useCart from './src/useCart'
 import useProductsCollection, { SortOrderEnum } from './src/useProductsCollection'

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "peerDependencies": {
     "react": "^18.2.0",
-    "shelf-cms-sdk": "^1.0.0"
+    "shelf-client-js-sdk": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
@@ -11,8 +11,6 @@
     "@rollup/plugin-babel": "^6.0.2",
     "@rollup/plugin-commonjs": "^23.0.2",
     "@rollup/plugin-node-resolve": "^15.0.1",
-    "react": "^18.2.0",
-    "shelf-client-sdk": "^1.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-terser": "^7.0.2"
   },
@@ -28,11 +26,11 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wush-wush-games/wush-store-front.git"
+    "url": "git+https://github.com/shelf-cms/shelf-client-react-hooks.git"
   },
   "bugs": {
-    "url": "https://github.com/wush-wush-games/wush-store-front/issues"
+    "url": "https://github.com/shelf-cms/shelf-client-react-hooks/issues"
   },
-  "homepage": "https://github.com/wush-wush-games/wush-store-front#readme",
+  "homepage": "https://github.com/shelf-cms/shelf-client-react-hooks#readme",
   "description": ""
 }

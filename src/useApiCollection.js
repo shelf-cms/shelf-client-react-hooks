@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import useTrigger from './common/useTrigger'
-import { getShelf } from 'shelf-cms-sdk'
+import { getShelf } from 'shelf-client-js-sdk'
 
 
 /**

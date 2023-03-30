@@ -1,6 +1,6 @@
-import { getShelf } from 'shelf-client-sdk'
+import { getShelf } from 'shelf-client-js-sdk'
 import { useCallback, useEffect, useState } from 'react'
-import { ProductData, LineItem } from 'shelf-client-sdk/src/js-docs-types'
+import { ProductData, LineItem } from 'shelf-client-js-sdk/src/js-docs-types'
 
 const useCart = () => {
   const [cart, setCart] = useState(getShelf().cart.get())
