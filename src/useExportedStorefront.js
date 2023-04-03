@@ -31,9 +31,9 @@ const useExportedStorefront = (handle=undefined) => {
     fetchData()
   }, [getShelf(), handle])
 
-  return [ 
+  return {
     data, loading, error, 
-  ]
+  }
 }
 
 export default useExportedStorefront
