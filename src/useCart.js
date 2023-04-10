@@ -3,13 +3,14 @@ import { useCallback, useEffect, useState } from 'react'
 import { ProductData, LineItem } from 'shelf-client-js-sdk/src/js-docs-types'
 
 const useCart = () => {
-  const [cart, setCart] = useState(getShelf().cart.get())
+  const [cart, setCart] = useState(getShelf()?.cart?.get())
   const [ready, setReady] = useState(false)
 
   useEffect(
     () => {
       setReady(true)
-      return getShelf().cart.add_sub(setCart)
+      setCart(getShelf()?.cart?.get())
+      return getShelf()?.cart?.add_sub(setCart)
     }, []
   )
   
@@ -62,7 +63,8 @@ const useCart = () => {
 
 
   const total = useCallback(
-    getShelf().cart.total, []
+    () => getShelf().cart.total()
+    , []
   )
 
   const controller = {
