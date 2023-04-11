@@ -9,6 +9,7 @@ import useApiDocument from './src/useApiDocument'
 import useOrders from './src/useOrders'
 import useOrder from './src/useOrder'
 import useProducts from './src/useProducts'
+import useCheckout from './src/useCheckout'
 import { useCollection, 
          useCommonCollection } from './src/useApiCollection'
 
@@ -18,6 +19,8 @@ export {
 
     useProducts,
     useProduct, 
+
+    useCheckout,
 
     useCart, 
     useProductsCollection, 
