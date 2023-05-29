@@ -14,7 +14,7 @@ const type = {}
 const useOrders = (uid=undefined, limit=10) => {
   const [q, setQ] = useState({ uid, limit })
   const q_initial = useRef({
-    orderBy: [['updatedAt', 'asc']],
+    orderBy: [['updatedAt', 'desc']],
     limit: q.limit
   })
 

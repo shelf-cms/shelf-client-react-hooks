@@ -25,7 +25,8 @@ const useUser = () => {
       signin : getShelf()?.auth?.signin_with_email_pass, 
       signup : getShelf()?.auth?.signup, 
       signout : getShelf()?.auth?.signout,
-      update : getShelf()?.auth?.updateCurrentUser
+      update : getShelf()?.auth?.updateCurrentUser,
+      resetPassword: getShelf()?.auth?.sendResetPassword
     }
   } 
 }
